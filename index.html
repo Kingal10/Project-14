@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Places I would like to visit/revisit</h1>
+    </div>
+    <div id="map"></div>
+    
+</body>
+<script>
+
+    const map = L.map('map').setView([34.553127, //latitude
+    18.048012], //longitude
+        1);    //zoom
+
+        L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            attribution: 'Copyright Google Maps'
+            }).addTo(map);
+            
+
+    var marker = L.marker([5.603717, -0.186964]).addTo(map);// Marker for Accra
+    marker.bindPopup("I haven't been back to Ghana since I came back to the States it would be nice to revist.").openPopup();  //Desccription for Accra
+    var marker = L.marker([36.204823, 138.252930]).addTo(map);// Marker for Japan
+    marker.bindPopup("Japan is my favorite to visit currently be of their rich culture and scenic landscapes.").openPopup(); //Description for Japan
+    var marker = L.marker([51.509865, -0.118092]).addTo(map);//Marker for London
+    marker.bindPopup("London has a melting pot of cultures that I would like to experience to see how different it is.").openPopup();//Description for London
+    var marker = L.marker([25.761681, -80.191788]).addTo(map);//Marker of Miami
+    marker.bindPopup("I just love the weather in Miami if I had the chance I would live there.").openPopup();//Marker for Miami
+    var marker = L.marker([64.128288, -21.827774]).addTo(map);//Marker for IceLand
+    marker.bindPopup("I just want to see the Northern lights to be honest.").openPopup();//Descripton for IceLand
+
+
+           
+</script>
+</html>
